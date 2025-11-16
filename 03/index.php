@@ -9,3 +9,6 @@ require 'Pagination.php';
 $pagination = new Pagination(40,10);
 $result = $pagination->prepare();
 print_r($result);
+
+// można wykorzystać do wyświetlania wierszy tabeli strona 1 => $result[0], strona 2 => result[1] ....
+// SELECT * FROM  orders LIMIT $itemsForPage OFFSET $result[$i]
