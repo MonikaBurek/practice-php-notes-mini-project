@@ -1,6 +1,6 @@
 <?php
 
-// Connect to the database, and execute a query
+
 class Database
 {
     public $connection;
@@ -15,7 +15,6 @@ class Database
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
-
     }
 
     public function query($query, $params = [])
@@ -28,7 +27,7 @@ class Database
 
     public function get()
     {
-       return $this->statement->fetchAll();
+        return $this->statement->fetchAll();
     }
 
     public function find()
@@ -46,6 +45,4 @@ class Database
 
         return $result;
     }
-
-
 }

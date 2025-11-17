@@ -19,7 +19,7 @@ class Table
         $tableHtml = "<table style='width:80%'>";
         $tableHtml .= viewTableHeader($tableInfo);
         $tableHtml .= viewTableBody($results, $tableInfo);
-
+        $tableHtml .= "</table>";
         return $tableHtml;
     }
 
