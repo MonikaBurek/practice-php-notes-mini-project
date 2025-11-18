@@ -1,10 +1,9 @@
 <?php
 
 class Validator {
+//pamietać aby na bazie była możliwość dodania notatki o odpowieniej ilości znaków
+    public static function hasValidLength($value, $min = 1, $max = INF) {
 
-    public static function string($value, $min = 1, $max = INF) {
-        $value = trim($value);
-
-        return strlen($value) >= $min && strlen($value) <= $max;
+        return mb_strlen($value) >= $min && mb_strlen($value) <= $max;
     }
 }

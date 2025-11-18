@@ -10,8 +10,8 @@ $heading = 'Komentarze: Dodaj komentarz';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
-
-    if (!Validator::string($_POST['body'], 1, 1000)) {
+    $body = trim($_POST['body']);
+    if (!Validator::hasValidLength($body, 1, 1000)) {
         $errors['body'] = 'Treść komentarza jest wymagana i może mieć maksymalnie 1000 znaków.';
     }
 
