@@ -5,7 +5,6 @@
 require 'Database.php';
 require 'Pagination.php';
 require_once __DIR__ . '/../Table.php';
-require_once __DIR__ . '/../functions.php';
 
 $config = require 'config.php';
 $db = new Database($config['database']);
@@ -28,7 +27,7 @@ if (isset($_GET['page'])) {
 
     $tableInfo = ['Id' => 'ID', 'title' => 'Tytuł', 'body' => 'Treść'];
     $table = new Table($nameTable);
-    $columnsNames = columnsNamesForQuery($tableInfo);
+    $columnsNames = $table->columnsNamesForQuery($tableInfo);
     $htmlTable = $table->render($tableInfo, $articles);
 
     echo $htmlTable;
@@ -36,6 +35,3 @@ if (isset($_GET['page'])) {
 } else {
     echo "Podaj parametr page np. page=2";
 }
-
-
-
